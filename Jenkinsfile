@@ -2,7 +2,7 @@ pipeline {
   agent any
   
   parameters{
-    string(name:'version',defaultValue:'2.0.0')
+    string(name:'version',defaultValue:'2.0.0',description:'ssss')
   }
   
   environment{
