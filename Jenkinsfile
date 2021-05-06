@@ -13,12 +13,7 @@ pipeline {
     }
     
     stage("Test"){
-      when {
-        expression{
-          env.BRANCH_NAME=='null'
-        }
-      }
-      steps{
+         steps{
         echo "Tsting successfull"
       }
     }
