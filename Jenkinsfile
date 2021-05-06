@@ -7,7 +7,20 @@ pipeline {
       }
     }
     
-    stage("Deploy"){
+    stage("Test"){
+      when {
+        expression{
+          BRANCH_NAME=="main"
+        }
+      }
+      steps{
+        echo "Tsting successfull"
+      }
+    }
+  }
+  
+  
+   stage("Deploy"){
       steps{
         echo "Deploy successfull"
       }
