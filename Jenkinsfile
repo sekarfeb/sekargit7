@@ -1,8 +1,8 @@
 def code
 
-pipeline
+pipeline {
 ageny any
- {
+ 
    stages{
 
   stage('Load') {
