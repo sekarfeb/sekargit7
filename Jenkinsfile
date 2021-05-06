@@ -3,6 +3,7 @@ pipeline {
   
   parameters{
     string(name:'version',defaultValue:'2.0.0',description:'ssss')
+    booleanParam(name:'execute',defaultValue:'true',description:'Execute')
   }
   
   environment{
@@ -20,6 +21,11 @@ pipeline {
     }
     
     stage("Test"){
+      when {
+        expression{
+          param.execute
+        }
+      }
          steps{
         echo "Tsting successfull"
       }
