@@ -1,51 +1,17 @@
-pipeline {
-  agent any
-  
-  parameters{
-    string(name:'version',defaultValue:'2.0.0',description:'ssss')
-    booleanParam(name:'execute',defaultValue:'true',description:'Execute')
+def code
+
+node('java-agent') {
+  stage('Checkout') {
+    checkout scm
   }
-  
-  environment{
-    New_Version = '1.0.0'
+
+  stage('Load') {
+    code = load 'example.groovy'
   }
-  stages {
-    stage ("Build"){
-      steps{
-        echo " Build Successfull"
-        echo  "Building Version number ${env.New_Version}"
-        echo "${version}"
-       
-       
-      }
-    }
-    
-    stage("Test"){
-      when {
-        expression{
-          params.execute
-        }
-      }
-         steps{
-        echo "Tsting successfull"
-      }
-    }
-  
-  
-  
-   stage("Deploy"){
-     steps{
-     script {
-       def varia = load "script.groovy"
-       varia.add()
-     }
-     }
-    }
-  }
-  
-  post {
-    always {
-      echo "build completed"
-    }
+
+  stage('Execute') {
+    code.example1()
   }
 }
+
+code.example2()
