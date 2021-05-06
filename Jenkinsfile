@@ -15,7 +15,11 @@ agent any
     }
 
   stage('Execute') {
+   steps{
+    script {
     code.example1()
+    }
+   }
   }
 }
 
