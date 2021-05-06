@@ -4,10 +4,11 @@ pipeline {
 agent any
  
    stages{
-
+    script {
   stage('Load') {
     code = load 'example.groovy'
   }
+    }
 
   stage('Execute') {
     code.example1()
