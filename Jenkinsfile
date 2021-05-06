@@ -1,9 +1,9 @@
 def code
 
-node('java-agent') {
-  stage('Checkout') {
-    checkout scm
-  }
+pipeline
+ageny any
+ {
+   stages{
 
   stage('Load') {
     code = load 'example.groovy'
@@ -15,3 +15,4 @@ node('java-agent') {
 }
 
 code.example2()
+ }
