@@ -13,6 +13,7 @@ pipeline {
       steps{
         echo " Build Successfull"
         echo  "Building Version number ${env.New_Version}"
+        sh 'mvn install'
        
       }
     }
