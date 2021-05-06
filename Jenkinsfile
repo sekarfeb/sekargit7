@@ -1,7 +1,7 @@
 def code
 
 pipeline {
-ageny any
+agent any
  
    stages{
 
