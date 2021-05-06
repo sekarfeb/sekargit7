@@ -17,7 +17,7 @@ pipeline {
         echo "Tsting successfull"
       }
     }
-  }
+  
   
   
    stage("Deploy"){
