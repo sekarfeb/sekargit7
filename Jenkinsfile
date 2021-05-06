@@ -34,12 +34,12 @@ pipeline {
   
   
    stage("Deploy"){
-     
+     steps{
      script {
        def varia = load "script.groovy"
        varia.add()
      }
-     
+     }
     }
   }
   
