@@ -1,10 +1,14 @@
 pipeline {
   agent any
+  
+  environment{
+    New_Version = '1.0.0'
+  }
   stages {
     stage ("Build"){
       steps{
         echo " Build Successfull"
-        echo  env.BRANCH_NAME
+        echo  "Building Version number ${env.New_Version}"
       }
     }
     
