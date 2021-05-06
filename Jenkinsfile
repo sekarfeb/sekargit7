@@ -1,6 +1,10 @@
 pipeline {
   agent any
   
+  tools{
+    maven 'myMaven'
+  }
+  
   environment{
     New_Version = '1.0.0'
   }
@@ -9,6 +13,7 @@ pipeline {
       steps{
         echo " Build Successfull"
         echo  "Building Version number ${env.New_Version}"
+        sh "mvn install"
       }
     }
     
