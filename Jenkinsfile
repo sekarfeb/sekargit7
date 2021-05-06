@@ -34,9 +34,12 @@ pipeline {
   
   
    stage("Deploy"){
-      steps{
-        echo "Deploy successfull"
-      }
+     
+     script {
+       def varia = load "script.groovy"
+       varia.
+     }
+     
     }
   }
   
