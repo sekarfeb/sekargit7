@@ -37,7 +37,7 @@ pipeline {
      
      script {
        def varia = load "script.groovy"
-       varia.
+       varia.add()
      }
      
     }
