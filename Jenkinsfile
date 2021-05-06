@@ -1,8 +1,8 @@
 pipeline {
   agent any
   
-  tools{
-    maven 'myMaven'
+  parameters{
+    string(name:'version',defaultValue:'2.0.0')
   }
   
   environment{
@@ -13,7 +13,8 @@ pipeline {
       steps{
         echo " Build Successfull"
         echo  "Building Version number ${env.New_Version}"
-        sh 'mvn clean package'
+        echo "${version}"
+       
        
       }
     }
