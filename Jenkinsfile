@@ -22,6 +22,6 @@ agent any
    }
   }
 }
-code.example2()
+
 
  }
